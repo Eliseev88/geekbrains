@@ -66,3 +66,28 @@ function createItemTemplate(item) {
 }
 
 
+
+/* С помощью JSON получаем базу */
+
+// let url = "https://raw.githubusercontent.com/Eliseev88/geekbrains/master/pr_omega/src/layout/catalog.json";
+
+// let catalog = {
+//     container: null,
+//     items: [],
+//     init () {
+//         this.container = document.querySelector('#catalog');
+//         fetch(url)
+//         .then(data => data.json())
+//         .then(items => {this.items = items});
+//         this._render();
+//     },
+//     _render() {
+//         let htmlStr = '';
+//         this.items.forEach(item => {
+//             htmlStr += createItemTemplate(item);
+//         });
+//         this.container.innerHTML = htmlStr;
+//     }
+// }
+
+
