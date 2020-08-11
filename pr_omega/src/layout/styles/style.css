@@ -440,12 +440,23 @@ a {
   padding: 10px 13px;
   visibility: hidden;
   border: 1px solid #ffffff;
+  background-color: transparent;
+  cursor: pointer;
   position: absolute;
   top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 25%;
   z-index: 2;
-  transition: visibility .2s linear; }
+  transition: all .2s linear; }
+  .catalog__bucket:hover {
+    transform: scale(1.1);
+  }  
+  .catalog__bucket:active {
+    box-shadow: 0 0 15px rgba(255, 255, 255) inset;
+    transform: scale(1);
+  }
+  .catalog__bucket:focus {
+    outline: 1px solid #fff;
+  }
 .catalog__hidden_text {
   margin-left: 8px;
   color: #fff;
@@ -1737,7 +1748,7 @@ a {
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase; }
-    .drop__price span {
+    .drop__span {
       margin: 0 5px;
       font-size: 10px; }
   .drop__cancel {
@@ -1771,3 +1782,117 @@ a {
       border-color: #f16d7f; }
 
 /*# sourceMappingURL=style.css.map */
+.blur {
+  transition: all .2s linear;
+  filter: blur(5px);
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 50;
+
+    width: 100%;
+    padding: 30px 100px 30px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.popup.state-appear {
+  visibility: visible;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.popup__wrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.popup__main {
+  display: block;
+  width: 400px;
+  margin: 0 100px 0;
+}
+
+.popup__preview {
+  display: block;
+  width: 120px;
+  cursor: pointer;
+  transition: outline .2s linear;
+}
+.popup__preview:hover {
+  outline: 1px solid black;
+}
+
+.popup__close {
+  color: black;
+  background-color: inherit;
+  font-size: 38px;
+  position: absolute;
+  top: 27px;
+  right: 30px;
+  cursor: pointer;
+  transition: transform .2s linear;
+  border: none;
+}
+.popup__close:hover {
+  transform: scale(1.1);
+}
+
+.popup__close:focus {
+  outline: none;
+}
+
+.popup__carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup__next,
+.popup__prev {
+  font-size: 30px;
+  cursor: pointer;
+  max-height: 50px;
+  margin-top: 16%;
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-in-center {
+  0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+  }
+
+  100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+  }
+
+  100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+}
